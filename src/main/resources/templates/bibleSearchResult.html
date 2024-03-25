@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/layout.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/header.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/bibleSearch.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/bibleSearchResult.css"/>
+
+    <script src="/jquery/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header th:replace="~{fragments/header :: header}"></header>
+    <main>
+        <section th:replace="~{fragments/bibleSearch :: bibleSearch}"></section>
+        <hr/>
+        <section class="search-result-wrap">
+            <h2 class="search-result-title" th:text="${resultTitle}">마태복음 1장 1절 ~ 2장 2절</h2>
+            <div class="search-result-content">
+                <div class="search-result-one" th:each="bibleData : ${bibleSearchResult}">
+                    <span th:text="|${bibleData.chapter}:${bibleData.verse}|">1:1</span>
+                    <span th:text="|${bibleData.message}|">message</span>
+                </div>
+            </div>
+            <div class="button-wrap">
+                <div class="prev-buttons">
+                    <button id="prev-verse-btn">이전 10절</button>
+                </div>
+                <div class="next-buttons">
+                    <button id="next-verse-btn">다음 10절</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+  </div>
+</body>
+
+<script src="/js/bibleSearch.js"></script>
+<script src="/js/bibleSearchResult.js"></script>
+
+</html>

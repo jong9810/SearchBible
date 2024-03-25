@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<section class="bible-search" th:fragment="bibleSearch">
+    <form method="get" th:action="@{/bible/search}">
+        <div>
+            <label>
+                <select id="oldNew" name="oldNew">
+                    <option selected value="0">구분 선택</option>
+                    <option value="OLD">구약</option>
+                    <option value="NEW">신약</option>
+                </select>
+            </label>
+            <label>
+                <select id="doc" name="doc">
+                    <option selected value="0">도서 선택</option>
+                </select>
+            </label>
+            <label>
+                <select id="startChapter" name="startChapter">
+                    <option selected value="0">시작 장</option>
+                </select>
+            </label>
+            <label>
+                <select id="startVerse" name="startVerse">
+                    <option selected value="0">시작 절</option>
+                </select>
+            </label>
+            <span>&nbsp;~&nbsp;</span>
+            <label>
+                <select id="endChapter" name="endChapter">
+                    <option selected value="0">끝 장</option>
+                </select>
+            </label>
+            <label>
+                <select id="endVerse" name="endVerse">
+                    <option selected value="0">끝 절</option>
+                </select>
+            </label>
+            <button id="search-button">검색</button>
+        </div>
+    </form>
+</section>
+</html>
